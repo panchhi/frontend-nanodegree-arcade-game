@@ -1,0 +1,4 @@
+git clone repository's url - to clone the repository
+git init - to create a new local repository
+git status
+git dif
