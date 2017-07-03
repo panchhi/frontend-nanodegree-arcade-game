@@ -1,7 +1,12 @@
+var left = 1;
+var right = 5;
+var top = 5;
+var bottom = 1;
 // Enemies our player must avoid
 var Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
+    this.locX = 0;
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -14,6 +19,7 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+    (this.loc++)*dt;
 };
 
 // Draw the enemy on the screen, required method for game
@@ -22,15 +28,50 @@ Enemy.prototype.render = function() {
 };
 
 // Now write your own player class
+var Player = function(){
+    this.locX = (start + end) / 2;
+    this.locY = 0;
+    this.sprite = 'images/char-boy.png';
+};
 // This class requires an update(), render() and
 // a handleInput() method.
+Player.prototype.update = function(){
+    if(top == 5)
+    {
+        
+    }
+    else if(bottom = 1)
+    {}
+};
+
+Player.prototype.render = function(){
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+Player.prototype.handleInput = function(dir){
+    if(dir == 'left')
+        this.locX--;
+    else if(dir == 'right')
+        this.locX++;
+    else if(dir == 'up')
+        this.locY++;
+    else
+        this.locY--;
+    this.update();
+};
 
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
+var allEnemies = [];
+for(var i = 0; i < 10; i++)
+{
+    allEnemies.push(new Enemy());
+    allEnemies[i].render();
+}
 // Place the player object in a variable called player
 
-
+var player = new Player();
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.

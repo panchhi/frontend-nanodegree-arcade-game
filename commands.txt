@@ -3,7 +3,7 @@ git init - to create a new local repository
 git status - 
 git diff - changes in the file
 git add file_path
-git add.
+git add .
 
 git commit -m "your message about what you did"
 
@@ -14,4 +14,6 @@ git branch --all - to see all the branches
 
 git checkout -b branch_name - creates new branch and switches to created
 				branch
-git branch branch_name - creates new branch
+git branch branch_name - creates new branchg
+
+git checkout branch_name - switch to given branch
